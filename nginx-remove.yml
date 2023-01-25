@@ -4,7 +4,7 @@
   become: true
   gather_facts: no
   tasks:
-    - name: Ansible apt install nginx
+    - name: Ansible apt delete nginx
       apt:
         name: nginx
         state: absent
