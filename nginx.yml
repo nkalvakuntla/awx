@@ -1,0 +1,9 @@
+---
+ - name: playbook to install nginx
+   hosts: all
+   become: true
+   tasks:
+     -name: apt install nginx
+      apt:
+       name: nginx
+       state: present
