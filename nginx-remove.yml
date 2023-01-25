@@ -1,0 +1,10 @@
+---
+- name: Playbook to remove NGINX
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: Ansible apt install nginx
+      apt:
+        name: nginx
+        state: absent
