@@ -2,7 +2,6 @@
 - name: Download Tomcat8 from tomcat.apache.org
   hosts: all
   become: true
-  become_user: tomcat
   vars:
     download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
   tasks:
