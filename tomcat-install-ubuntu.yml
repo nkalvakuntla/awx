@@ -3,7 +3,7 @@
   hosts: all
   become: true
   vars:
-    download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.tar.gz
+    download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
   tasks:
    - name: Download Open JDK
      become: yes
