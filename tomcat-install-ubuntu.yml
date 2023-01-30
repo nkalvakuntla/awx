@@ -6,7 +6,7 @@
     download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
   tasks:
    - name: Download Open JDK
-     become: yes
+     become: true
      apt:
       name: openjdk-8-jre-headless
       update_cache: yes
@@ -17,17 +17,17 @@
       java -version
      
    - name: Create the group
-     become: yes
+     become: true
      group: 
       name: tomcat
       state: present
    - name: Create the user
-     become: yes
+     become: true
      user:
         name: tomcat
         state: present
    - name: Create a Directory /opt/tomcat8
-     become: yes
+     become: true
      file:
        path: /opt/tomcat8
        state: directory
@@ -35,7 +35,7 @@
        owner: tomcat
        group: tomcat
    - name: Download Tomcat using unarchive
-     become: yes
+     become: true
      unarchive:
        src: "{{download_url}}"
        dest: /opt/tomcat8
@@ -45,11 +45,11 @@
        owner: tomcat
     
    - name: Move files to the /opt/tomcat8 directory
-     become: yes
+     become: true
      become_user: tomcat
      shell: "mv /opt/tomcat8/apache*/* /opt/tomcat8"
    - name: Creating a service file
-     become: yes
+     become: true
      copy: 
       content: |-
         [Unit]
@@ -70,11 +70,11 @@
         WantedBy=multi-user.target
       dest: /etc/systemd/system/tomcat.service
    - name: Reload the SystemD to re-read configurations
-     become: yes
+     become: true
      systemd:
         daemon-reload: yes
    - name: Enable the tomcat service and start
-     become: yes
+     become: true
      systemd:
         name: tomcat
         enabled: yes
