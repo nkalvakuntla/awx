@@ -36,6 +36,7 @@
        group: tomcat
    - name: Download Tomcat using unarchive
      become: true
+     become_user: tomcat
      unarchive:
        src: "{{download_url}}"
        dest: /opt/tomcat8
