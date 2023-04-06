@@ -3,7 +3,8 @@
   hosts: all
   become: true
   gather_facts: no
-  update_cache: yes
+- name: update the apt package index
+  apt: update_cache: yes
   tasks:
     - name: Ansible apt install nginx
       apt:
