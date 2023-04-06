@@ -3,6 +3,7 @@
   hosts: all
   become: true
   gather_facts: no
+  update_cache: yes
   tasks:
     - name: Ansible apt install nginx
       apt:
