@@ -1,0 +1,10 @@
+---
+- name: Playbook to install NGINX
+  hosts: all
+  gather_facts: false
+  become : yes
+  tasks:
+   - name: Install apache httpd 
+     ansible.builtin.apt:
+      name: apache2
+      state: present
