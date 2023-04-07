@@ -1,12 +1,13 @@
----
-- name: Playbook to install NGINX
-  hosts: all
-  gather_facts: false
-  become : yes
+- hosts: all
+  become: yes
   tasks:
-    - name: Ansible apt install nginx
-      apt:
-        name: nginx
-        state: present
-        update_cache: yes
+  - name: "apt-get update"
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: "install nginx"
+    apt:
+      name: ['nginx']
+      state: latest
 
