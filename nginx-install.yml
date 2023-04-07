@@ -1,8 +1,7 @@
 ---
 - name: Playbook to install NGINX
   hosts: all
-  become: yes
-  gather_facts: yes
+  gather_facts: false
   tasks:
     - name: Ansible apt install nginx
       apt:
