@@ -2,8 +2,6 @@
 - name: Playbook to install NGINX
   hosts: all
   become: yes
-  become_user: proot
-  become_method: sudo
   gather_facts: yes
   tasks:
     - name: Ansible apt install nginx
