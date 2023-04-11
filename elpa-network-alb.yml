@@ -4,7 +4,7 @@
     name : myelb
      subnets : 
       - subnet - subnet-af5564c7
-      - subnet -subnet-287c1352
+      - subnet - subnet-287c1352
      listeners : 
       -  Protocol : TCP 
         Port :  80  
