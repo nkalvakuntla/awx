@@ -1,14 +1,14 @@
 -  name : Create an ELB and attach a listener
    hosts: all
-   community.aws.elb_network_lb : 
+   community.aws.elb_network_lb :
     name : myelb
-     subnets : 
+     subnets :
       - subnet - subnet-af5564c7
       - subnet - subnet-287c1352
-     listeners : 
-      -  Protocol : TCP 
-        Port :  80  
-        DefaultActions : 
+     listeners :
+      -  Protocol : TCP
+        Port :  80
+        DefaultActions :
           -  Type : forward
             TargetGroupName :  tstsre-web-targer-group
     state : present
