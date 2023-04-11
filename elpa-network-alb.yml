@@ -1,4 +1,3 @@
----
 - name: Create an ELB and attach a listener
   community.aws.elb_network_lb:
     name: myelb
